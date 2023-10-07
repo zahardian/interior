@@ -59,11 +59,9 @@ export default function Contact() {
                 Your Message <span className="text-primary">*</span>
               </h4>
               <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="5"
-                className="w-full rounded border border-slate-200 focus:border-primary focus:outline-none"
+                name="message"
+                id="message"
+                className="w-full h-40 rounded border border-slate-200 focus:border-primary focus:outline-none"
               />
             </div>
             <div>
