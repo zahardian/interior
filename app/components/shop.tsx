@@ -53,7 +53,7 @@ export default function All() {
   ];
   return (
     <>
-      {shopProduct.map((product) => (
+      {shopProduct.map((product: any) => (
         <div
           key={product.id}
           className="bg-white rounded shadow overflow-hidden group"

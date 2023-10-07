@@ -37,7 +37,7 @@ export default function New() {
   ];
   return (
     <>
-      {newProduct.map((product) => (
+      {newProduct.map((product: any) => (
         <div
           key={product.id}
           className="bg-white rounded shadow overflow-hidden group"

@@ -69,7 +69,7 @@ export default function Recomended() {
   ];
   return (
     <>
-      {recomendedProduct.map((product) => (
+      {recomendedProduct.map((product: any) => (
         <div
           key={product.id}
           className="bg-white rounded shadow overflow-hidden group"

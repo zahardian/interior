@@ -2,8 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
   return (
     <>
@@ -175,7 +177,7 @@ export default function Header() {
             </div>
 
             {/* navbar links */}
-            <div className="lg:flex items-center justify-between flex-grow pl-12 hidden">
+            <div className="md:flex items-center justify-between flex-grow pl-12 hidden">
               <div className="flex items-center space-x-6 capitalize">
                 <Link
                   href="/"
@@ -225,8 +227,11 @@ export default function Header() {
                 </Link>
               </div>
             </div>
-            <button className="text-white lg:hidden text-xl">
-              <i className="fa-solid fa-bars" />
+            <button
+              onClick={() => setOpen(!open)}
+              className="text-white md:hidden text-xl"
+            >
+              <Image src="/icons8-menu.svg" width={15} height={15} alt="menu" />
             </button>
           </div>
 
@@ -262,6 +267,68 @@ export default function Header() {
             </div>
           </div> */}
         </nav>
+        <div className={`bg-gray-800 md:hidden ${open ? "hidden" : "block"}`}>
+          <div className="text-center items-center justify-between flex-grow ">
+            <div className="justify-center items-center capitalize pt-2 pb-8">
+              <ul className="pb-8 space-y-2">
+                <li>
+                  <Link
+                    href="/"
+                    className={`${
+                      pathname === "/" ? "text-primary" : "text-white"
+                    } transition`}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/shop"
+                    className={`${
+                      pathname === "/shop" ? "text-primary" : "text-white"
+                    } transition`}
+                  >
+                    Shop
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className={`${
+                      pathname === "/about" ? "text-primary" : "text-white"
+                    } transition`}
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className={`${
+                      pathname === "/contact" ? "text-primary" : "text-white"
+                    } transition`}
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+              <div className="space-x-4">
+                <Link
+                  href="/login"
+                  className="text-gray-200 hover:text-white transition"
+                >
+                  Login
+                </Link>
+                <Link
+                  href="/register"
+                  className="text-gray-200 hover:text-white transition border rounded p-2"
+                >
+                  Register
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
