@@ -18,7 +18,7 @@ export default function About() {
             <p className="mb-8">
               Furniture is a potent visual marker of our times,” says Caroline
               Stevenson, head of cultural and ... “Trend analysis of any given
-              era will reveal society's values and aspirations.” ... The urge to
+              era will reveal societys values and aspirations.” ... The urge to
               creative expression runs deep
             </p>
             <div className="flex gap-10">

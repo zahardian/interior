@@ -56,7 +56,7 @@ export default function Login() {
           </div>
           <div className="text-center">
             <h4>
-              Don't have an account.?{" "}
+              Dont have an account.?{" "}
               <Link href="/register" className="text-primary cursor-pointer">
                 Register Now
               </Link>
