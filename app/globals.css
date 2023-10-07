@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-poppins;
+  }
+}
+
+.banner {
+  background-image: url(/banner-bg.jpg);
+}
+
+.bg-about {
+  background-image: url(/bg-furniture.jpg);
+}
+
+.bg-contact {
+  background-image: url(/bg-furniture1.jpg);
+}
+
+.c-abu {
+  background-color: gray;
+}
+
+.c-coklat {
+  background-color: chocolate;
+}
+
+.c-hitam {
+  background-color: #000;
+}
+
+@layer components {
+  .size-selector input:checked + label {
+    @apply bg-primary text-white;
+  }
+  .color-selector input:checked + label {
+    @apply ring-2 ring-primary;
+  }
+}
