@@ -6,6 +6,13 @@ import { useState } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 export default function Header() {
+  const links = [
+    { name: "Home", tag: "/" },
+    { name: "Shop", tag: "/shop" },
+    { name: "About", tag: "/about" },
+    { name: "Contact", tag: "/contact" },
+  ];
+
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   return (
@@ -180,38 +187,18 @@ export default function Header() {
             {/* navbar links */}
             <div className="md:flex items-center justify-between flex-grow pl-12 hidden">
               <div className="flex items-center space-x-6 capitalize">
-                <Link
-                  href="/"
-                  className={`${
-                    pathname === "/" ? "text-primary" : "text-white"
-                  } transition`}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/shop"
-                  className={`${
-                    pathname === "/shop" ? "text-primary" : "text-white"
-                  } transition`}
-                >
-                  Shop
-                </Link>
-                <Link
-                  href="/about"
-                  className={`${
-                    pathname === "/about" ? "text-primary" : "text-white"
-                  } transition`}
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="/contact"
-                  className={`${
-                    pathname === "/contact" ? "text-primary" : "text-white"
-                  } transition`}
-                >
-                  Contact Us
-                </Link>
+                {links.map((link) => (
+                  <div key={link.name}>
+                    <Link
+                      href={link.tag}
+                      className={`${
+                        pathname === link.tag ? "text-primary" : "text-white"
+                      } transition`}
+                    >
+                      {link.name}
+                    </Link>
+                  </div>
+                ))}
               </div>
               <div className="space-x-4">
                 <Link
@@ -240,50 +227,19 @@ export default function Header() {
           <div className="text-center items-center justify-between flex-grow ">
             <div className="justify-center items-center capitalize pt-2 pb-8">
               <ul className="pb-8 space-y-2">
-                <li>
-                  <Link
-                    onClick={() => setOpen(!open)}
-                    href="/"
-                    className={`${
-                      pathname === "/" ? "text-primary" : "text-white"
-                    } transition`}
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    onClick={() => setOpen(!open)}
-                    href="/shop"
-                    className={`${
-                      pathname === "/shop" ? "text-primary" : "text-white"
-                    } transition`}
-                  >
-                    Shop
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    onClick={() => setOpen(!open)}
-                    href="/about"
-                    className={`${
-                      pathname === "/about" ? "text-primary" : "text-white"
-                    } transition`}
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    onClick={() => setOpen(!open)}
-                    href="/contact"
-                    className={`${
-                      pathname === "/contact" ? "text-primary" : "text-white"
-                    } transition`}
-                  >
-                    Contact Us
-                  </Link>
-                </li>
+                {links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      onClick={() => setOpen(!open)}
+                      href={link.tag}
+                      className={`${
+                        pathname === link.tag ? "text-primary" : "text-white"
+                      } transition`}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
               <div className="space-x-4">
                 <Link
