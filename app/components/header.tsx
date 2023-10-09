@@ -232,7 +232,7 @@ export default function Header() {
               onClick={() => setOpen(!open)}
               className="text-white md:hidden text-xl"
             >
-              {open ? <HiMenuAlt3 size={22} /> : <HiX size={22} />}
+              {open ? <HiX size={22} /> : <HiMenuAlt3 size={22} />}
             </button>
           </div>
 
@@ -268,7 +268,7 @@ export default function Header() {
             </div>
           </div> */}
         </nav>
-        <div className={`bg-gray-800 md:hidden ${open ? "hidden" : "block"}`}>
+        <div className={`bg-gray-800 md:hidden ${open ? "block" : "hidden"}`}>
           <div className="text-center items-center justify-between flex-grow ">
             <div className="justify-center items-center capitalize pt-2 pb-8">
               <ul className="pb-8 space-y-2">
