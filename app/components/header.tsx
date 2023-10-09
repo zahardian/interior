@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -231,7 +232,7 @@ export default function Header() {
               onClick={() => setOpen(!open)}
               className="text-white md:hidden text-xl"
             >
-              <Image src="/icons8-menu.svg" width={15} height={15} alt="menu" />
+              {open ? <HiMenuAlt3 size={22} /> : <HiX size={22} />}
             </button>
           </div>
 
