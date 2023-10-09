@@ -235,38 +235,6 @@ export default function Header() {
               {open ? <HiX size={22} /> : <HiMenuAlt3 size={22} />}
             </button>
           </div>
-
-          {/* <div>
-            <div className="flex flex-col gap-4 py-2 pt-8 text-center capitalize">
-              <Link href="/" className="text-gray-200 hover:text-white transition">
-                Home
-              </Link>
-              <Link
-                href="/shop"
-                className="text-gray-200 hover:text-white transition"
-              >
-                Shop
-              </Link>
-              <Link
-                href="/about"
-                className="text-gray-200 hover:text-white transition"
-              >
-                About Us
-              </Link>
-              <Link
-                href="/contact"
-                className="text-gray-200 hover:text-white transition"
-              >
-                Contact Us
-              </Link>
-              <Link
-                href="/login"
-                className="text-gray-200 hover:text-white transition"
-              >
-                Login/Register
-              </Link>
-            </div>
-          </div> */}
         </nav>
         <div className={`bg-gray-800 md:hidden ${open ? "block" : "hidden"}`}>
           <div className="text-center items-center justify-between flex-grow ">
@@ -274,6 +242,7 @@ export default function Header() {
               <ul className="pb-8 space-y-2">
                 <li>
                   <Link
+                    onClick={() => setOpen(!open)}
                     href="/"
                     className={`${
                       pathname === "/" ? "text-primary" : "text-white"
@@ -284,6 +253,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
+                    onClick={() => setOpen(!open)}
                     href="/shop"
                     className={`${
                       pathname === "/shop" ? "text-primary" : "text-white"
@@ -294,6 +264,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
+                    onClick={() => setOpen(!open)}
                     href="/about"
                     className={`${
                       pathname === "/about" ? "text-primary" : "text-white"
@@ -304,6 +275,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
+                    onClick={() => setOpen(!open)}
                     href="/contact"
                     className={`${
                       pathname === "/contact" ? "text-primary" : "text-white"
